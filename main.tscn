@@ -106,10 +106,10 @@ resource_name = "r"
 size = Vector2(614.4331, 90)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lswn8"]
-size = Vector2(130, 143)
+size = Vector2(196, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6jrf"]
-size = Vector2(141, 79)
+size = Vector2(141, 151)
 
 [node name="Main" type="Node2D"]
 position = Vector2(408, 238)
@@ -225,11 +225,11 @@ scale = Vector2(1.0515466, 1.0515463)
 texture = ExtResource("25_0odxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
-position = Vector2(572, 216.5)
+position = Vector2(581, 212.5)
 shape = SubResource("RectangleShape2D_lswn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(582.5, 177.5)
+position = Vector2(582.5, 213.5)
 shape = SubResource("RectangleShape2D_a6jrf")
 
 [node name="Clipart4181691" type="Sprite2D" parent="."]
