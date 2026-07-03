@@ -131,8 +131,8 @@ animations = [{
 position = Vector2(408, 238)
 
 [node name="Screenshot20260701At8_01_26Am" type="Sprite2D" parent="."]
-position = Vector2(487.9999, 458.5)
-scale = Vector2(1.237569, 0.9698034)
+position = Vector2(514, 455.75)
+scale = Vector2(1.2734808, 0.97296345)
 texture = ExtResource("1_h2yge")
 
 [node name="ground" type="Sprite2D" parent="."]
