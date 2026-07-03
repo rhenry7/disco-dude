@@ -50,7 +50,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -70,7 +70,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"jump",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -90,7 +90,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 10.0
+"speed": 6.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]
@@ -127,7 +127,7 @@ animations = [{
 "speed": 9.0
 }]
 
-[node name="Main" type="Node2D"]
+[node name="LevelOne" type="Node2D"]
 position = Vector2(408, 238)
 
 [node name="Screenshot20260701At8_01_26Am" type="Sprite2D" parent="."]
@@ -148,7 +148,7 @@ script = ExtResource("1_0xm2m")
 position = Vector2(63.033966, 43.977356)
 scale = Vector2(1.093017, 1.093017)
 sprite_frames = SubResource("SpriteFrames_4c57u")
-animation = &"idle"
+animation = &"run"
 autoplay = "run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
