@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://cglv3e8bsngtn"]
+[gd_scene load_steps=33 format=3 uid="uid://cglv3e8bsngtn"]
 
 [ext_resource type="Script" uid="uid://c7ig26qf67hc" path="res://player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cb47hx44sur76" path="res://Screenshot 2026-07-01 at 8.01.26 AM.png" id="1_h2yge"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://cd1ndxe1h50uu" path="res://disco-dude-run/Untitled_Artwork-3 7.png" id="15_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cusm7npg0qwsb" path="res://disco-dude-run/Untitled_Artwork-4 7.png" id="16_getpj"]
 [ext_resource type="Texture2D" uid="uid://bj2kef05qu17r" path="res://disco-dude-run/Untitled_Artwork-5 6.png" id="17_ryguw"]
-[ext_resource type="Texture2D" uid="uid://cdfyjysu6pix6" path="res://music-ground.png" id="18_ryguw"]
 [ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://music-sheet-1275485_1280.png" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="20_82xsv"]
 [ext_resource type="Script" uid="uid://dpuxl0aqbjwgb" path="res://score.gd" id="21_getpj"]
@@ -26,6 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://e6tjfe1thaf8" path="res://guitar.png" id="24_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cfy0mh361o80k" path="res://Untitled_Artwork 2.png" id="25_0odxb"]
 [ext_resource type="Texture2D" uid="uid://4wt4an4qykwr" path="res://clipart4181691.png" id="26_lswn8"]
+[ext_resource type="Script" uid="uid://bn2srsi5y6p6i" path="res://enemy.gd" id="27_kq58d"]
+[ext_resource type="Texture2D" uid="uid://j45ss1lua3cq" path="res://ChatGPT Image Jul 2, 2026, 04_44_32 PM.png" id="29_qsp4k"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4c57u"]
 animations = [{
@@ -93,30 +94,20 @@ size = Vector2(156, 171)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d13ii"]
 resource_local_to_scene = true
 resource_name = "q"
-size = Vector2(619, 91)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1u8w0"]
-resource_local_to_scene = true
-resource_name = "w"
-size = Vector2(619.0669, 86.5)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0odxb"]
-resource_local_to_scene = true
-resource_name = "r"
-size = Vector2(614.4331, 90)
+size = Vector2(1583.6338, 72.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lswn8"]
 size = Vector2(196, 135)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a6jrf"]
-size = Vector2(141, 151)
+size = Vector2(141, 153)
 
 [node name="Main" type="Node2D"]
 position = Vector2(408, 238)
 
 [node name="Screenshot20260701At8_01_26Am" type="Sprite2D" parent="."]
-position = Vector2(284.00006, 87.000015)
-scale = Vector2(0.9599447, 0.4508427)
+position = Vector2(487.9999, 458.5)
+scale = Vector2(1.237569, 0.9698034)
 texture = ExtResource("1_h2yge")
 
 [node name="ground" type="Sprite2D" parent="."]
@@ -184,52 +175,40 @@ scale = Vector2(0.07031247, 0.07031247)
 texture = ExtResource("23_1u8w0")
 
 [node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(2.133789, 161)
+position = Vector2(5, 923)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(112.5, 176.5)
+position = Vector2(381, -255)
 shape = SubResource("RectangleShape2D_d13ii")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground"]
-position = Vector2(-573.66724, 173.75)
-shape = SubResource("RectangleShape2D_1u8w0")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground"]
-position = Vector2(800.64966, 176)
-shape = SubResource("RectangleShape2D_0odxb")
-
-[node name="MusicGround" type="Sprite2D" parent="Ground"]
-position = Vector2(119, 174.99998)
-scale = Vector2(0.51002824, 0.51002866)
-texture = ExtResource("18_ryguw")
-
-[node name="MusicGround2" type="Sprite2D" parent="Ground"]
-visible = false
-position = Vector2(335.8662, 202)
-scale = Vector2(0.64756423, 0.64756435)
-texture = ExtResource("18_ryguw")
+[node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground/CollisionShape2D"]
+position = Vector2(-7.1831055, 151)
+scale = Vector2(1.2776693, 1.465332)
+texture = ExtResource("29_qsp4k")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(3, 0)
 repeat_times = 11
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
+position = Vector2(-150, -116)
+script = ExtResource("27_kq58d")
 
-[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+[node name="Area2D" type="Area2D" parent="Enemy"]
 position = Vector2(9, -1)
 
-[node name="UntitledArtwork2" type="Sprite2D" parent="CharacterBody2D/Area2D"]
+[node name="UntitledArtwork2" type="Sprite2D" parent="Enemy/Area2D"]
 position = Vector2(579.99994, 195)
 scale = Vector2(1.0515466, 1.0515463)
 texture = ExtResource("25_0odxb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
 position = Vector2(581, 212.5)
 shape = SubResource("RectangleShape2D_lswn8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(582.5, 213.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+position = Vector2(582.5, 214.5)
 shape = SubResource("RectangleShape2D_a6jrf")
 
 [node name="Clipart4181691" type="Sprite2D" parent="."]
