@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://p3r1uyb0hyje"]
 
-[ext_resource type="Script" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="Script" uid="uid://c5dqvp8vo1l2s" path="res://scenes/ui/hud.gd" id="1_hud"]
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_hud")
@@ -10,5 +10,6 @@ offset_left = 24.0
 offset_top = 16.0
 offset_right = 224.0
 offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "0 / 5"
+text = "0 / 1"

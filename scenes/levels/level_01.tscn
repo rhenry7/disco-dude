@@ -22,7 +22,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 resource_local_to_scene = true
 resource_name = "q"
-size = Vector2(1583.6338, 72.5)
+size = Vector2(1501.8169, 72.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_enemyarea"]
 size = Vector2(196, 135)
@@ -82,6 +82,7 @@ offset_left = -444.0
 offset_top = -251.0
 offset_right = 1447.0
 offset_bottom = 1205.0
+color = Color(1, 1, 0.5882353, 1)
 
 [node name="ground" type="Sprite2D" parent="." index="2"]
 visible = false
@@ -110,16 +111,18 @@ texture = ExtResource("7_untitledart1")
 [node name="Instruments" type="Node2D" parent="." index="7"]
 
 [node name="Ground" type="StaticBody2D" parent="." index="8"]
-position = Vector2(-580, 929)
+position = Vector2(-538, 929)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="0"]
-position = Vector2(-28, -270)
+position = Vector2(25, -272)
 shape = SubResource("RectangleShape2D_ground")
 
 [node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground/CollisionShape2D" index="0"]
+modulate = Color(0.14213324, 0.14213324, 0.14213324, 1)
 position = Vector2(-5, 94)
 scale = Vector2(1.2776693, 1.465332)
 texture = ExtResource("6_3g50r")
+flip_h = true
 
 [node name="Ground2" type="StaticBody2D" parent="." index="9"]
 position = Vector2(-431, 931)
@@ -174,3 +177,8 @@ visible = false
 position = Vector2(1260, 415)
 sprite_frames = SubResource("SpriteFrames_discgif")
 autoplay = "default"
+
+[node name="UntitledArtwork114" type="Sprite2D" parent="." index="14"]
+position = Vector2(572, -206)
+scale = Vector2(2.318644, 2.318644)
+texture = ExtResource("6_3g50r")
