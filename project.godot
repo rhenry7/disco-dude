@@ -11,15 +11,23 @@ config_version=5
 [application]
 
 config/name="DiscoDude"
-run/main_scene="uid://cglv3e8bsngtn"
+run/main_scene="res://scenes/levels/level_01.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+LevelManager="*res://autoloads/LevelManager.gd"
 
 [display]
 
 window/size/viewport_width=1800
 window/size/viewport_height=1400
 window/size/initial_position_type=0
+
+[global_group]
+
+notes=""
 
 [input]
 

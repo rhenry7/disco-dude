@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scenes/levels/level_base.gd" id="1_level_base"]
+[ext_resource type="PackedScene" path="res://scenes/ui/hud.tscn" id="2_hud"]
+
+[node name="LevelBase" type="Node2D"]
+script = ExtResource("1_level_base")
+required_items = 5
+
+[node name="HUD" parent="." instance=ExtResource("2_hud")]

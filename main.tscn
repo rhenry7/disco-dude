@@ -1,6 +1,6 @@
-[gd_scene load_steps=39 format=3 uid="uid://cglv3e8bsngtn"]
+[gd_scene load_steps=39 format=3 uid="uid://dpkftfmotm70h"]
 
-[ext_resource type="Script" uid="uid://c7ig26qf67hc" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://dctdit7u3bd50" path="res://scenes/player/player.gd" id="1_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://cb47hx44sur76" path="res://Screenshot 2026-07-01 at 8.01.26 AM.png" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="2_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://dqvywqop6ow30" path="res://disco-dude-jump/Untitled_Artwork-1 10.png" id="4_4c57u"]
@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bj2kef05qu17r" path="res://disco-dude-run/Untitled_Artwork-5 6.png" id="17_ryguw"]
 [ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://music-sheet-1275485_1280.png" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="20_82xsv"]
-[ext_resource type="Script" uid="uid://dpuxl0aqbjwgb" path="res://score.gd" id="21_getpj"]
+[ext_resource type="Script" path="res://score.gd" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://ccub4fa8uwu1a" path="res://ChatGPT Image Jul 1, 2026, 04_26_26 PM.png" id="23_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://drt1tligcict1" path="res://Violin.png" id="23_d13ii"]
 [ext_resource type="Texture2D" uid="uid://e6tjfe1thaf8" path="res://guitar.png" id="24_1u8w0"]
@@ -90,7 +90,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 6.0
+"speed": 8.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_efxa6"]

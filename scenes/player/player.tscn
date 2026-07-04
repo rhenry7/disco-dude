@@ -1,0 +1,94 @@
+[gd_scene load_steps=16 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_player"]
+[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-1 10.png" id="2_idle1"]
+[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-2 7.png" id="3_idle2"]
+[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-3 7.png" id="4_idle3"]
+[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-4 7.png" id="5_idle4"]
+[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-1 10.png" id="6_jump1"]
+[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-2 7.png" id="7_jump2"]
+[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-3 7.png" id="8_jump3"]
+[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-4 7.png" id="9_jump4"]
+[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-5 6.png" id="10_jump5"]
+[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-1 10.png" id="11_run1"]
+[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-2 7.png" id="12_run2"]
+[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-3 7.png" id="13_run3"]
+[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-4 7.png" id="14_run4"]
+[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-5 6.png" id="15_run5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_player"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_idle1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_idle2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idle3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_idle4")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_jump1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jump2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jump3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jump4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jump5")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_run1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_run2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_run3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_run4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_run5")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_player"]
+size = Vector2(156, 171)
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_player")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(63.033966, 43.977356)
+scale = Vector2(1.093017, 1.093017)
+sprite_frames = SubResource("SpriteFrames_player")
+animation = &"run"
+autoplay = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(56, 62)
+shape = SubResource("RectangleShape2D_player")

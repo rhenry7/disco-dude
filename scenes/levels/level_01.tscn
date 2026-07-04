@@ -1,0 +1,176 @@
+[gd_scene load_steps=25 format=3 uid="uid://cqfbj8adtwje6"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
+[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://do52gdx757lpq" path="res://scenes/collectibles/collectible.tscn" id="3_collectible"]
+[ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="5_groundimg"]
+[ext_resource type="Texture2D" uid="uid://dk6bawflw5fx0" path="res://GroundNotes/Untitled_Artwork-1 14.png" id="6_3g50r"]
+[ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://music-sheet-1275485_1280.png" id="6_musicsheet"]
+[ext_resource type="Texture2D" uid="uid://by6wpe04gajlg" path="res://GroundNotes/Untitled_Artwork-3 9.png" id="7_iu1m7"]
+[ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="7_untitledart1"]
+[ext_resource type="Texture2D" uid="uid://khg54ck7uxkg" path="res://DiscoDaisy/Untitled_Artwork-1 13.png" id="8_e6lid"]
+[ext_resource type="Texture2D" uid="uid://c2r0xclv1yusd" path="res://DiscoDaisy/Untitled_Artwork-2 9.png" id="9_3g50r"]
+[ext_resource type="Texture2D" uid="uid://bqihhfepa8bc2" path="res://DiscoDaisy/Untitled_Artwork-3 8.png" id="10_iu1m7"]
+[ext_resource type="Texture2D" uid="uid://dhsog7twt6lu0" path="res://DiscoDaisy/Untitled_Artwork-4 8.png" id="11_cywot"]
+[ext_resource type="Texture2D" uid="uid://ym1uq1ukjhnj" path="res://Notes/Notes-3.png" id="13_e6lid"]
+[ext_resource type="Script" uid="uid://bn2srsi5y6p6i" path="res://enemy.gd" id="13_enemyscript"]
+[ext_resource type="Texture2D" uid="uid://vfxkhv5jfn0" path="res://disc-gif/Untitled_Artwork-1 12.png" id="16_discgif1"]
+[ext_resource type="Texture2D" uid="uid://b0xju8xh41n6d" path="res://disc-gif/Untitled_Artwork-2 8.png" id="17_discgif2"]
+[ext_resource type="Texture2D" uid="uid://bstaj4os3s7dq" path="res://disc-gif/Untitled_Artwork-3 8.png" id="18_discgif3"]
+[ext_resource type="Texture2D" uid="uid://e1desba7q6au" path="res://disc-gif/Untitled_Artwork-4 8.png" id="19_discgif4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
+resource_local_to_scene = true
+resource_name = "q"
+size = Vector2(1583.6338, 72.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemyarea"]
+size = Vector2(196, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vrcmr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_e6lid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_3g50r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_iu1m7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cywot")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemybody"]
+size = Vector2(141, 171)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_notebounce"]
+radius = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_discgif"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_discgif1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_discgif2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_discgif3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_discgif4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="Level01" instance=ExtResource("1_levelbase")]
+position = Vector2(408, 238)
+required_items = 1
+
+[node name="ColorRect" type="ColorRect" parent="." index="0"]
+offset_left = -444.0
+offset_top = -251.0
+offset_right = 1447.0
+offset_bottom = 1205.0
+
+[node name="ground" type="Sprite2D" parent="." index="2"]
+visible = false
+position = Vector2(255, 506)
+texture = ExtResource("5_groundimg")
+
+[node name="Player" parent="." index="3" instance=ExtResource("2_player")]
+position = Vector2(0, -121)
+
+[node name="MusicSheet12754851280" type="Sprite2D" parent="." index="4"]
+visible = false
+position = Vector2(409.99997, 297)
+scale = Vector2(0.90168285, 0.9016829)
+texture = ExtResource("6_musicsheet")
+
+[node name="UntitledArtwork110" type="Sprite2D" parent="." index="5"]
+visible = false
+position = Vector2(539, 449)
+texture = ExtResource("7_untitledart1")
+
+[node name="UntitledArtwork111" type="Sprite2D" parent="." index="6"]
+visible = false
+position = Vector2(-821, 449)
+texture = ExtResource("7_untitledart1")
+
+[node name="Instruments" type="Node2D" parent="." index="7"]
+
+[node name="Ground" type="StaticBody2D" parent="." index="8"]
+position = Vector2(-580, 929)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="0"]
+position = Vector2(-28, -270)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground/CollisionShape2D" index="0"]
+position = Vector2(-5, 94)
+scale = Vector2(1.2776693, 1.465332)
+texture = ExtResource("6_3g50r")
+
+[node name="Ground2" type="StaticBody2D" parent="." index="9"]
+position = Vector2(-431, 931)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" index="0"]
+position = Vector2(2185, -270)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground2/CollisionShape2D" index="0"]
+position = Vector2(146, 132)
+scale = Vector2(1.5339997, 1.7593119)
+texture = ExtResource("7_iu1m7")
+
+[node name="Parallax2D" type="Parallax2D" parent="." index="10"]
+repeat_size = Vector2(3000, 0)
+autoscroll = Vector2(3, 0)
+repeat_times = 11
+
+[node name="Enemy" type="CharacterBody2D" parent="." index="11" groups=["enemy", "note"]]
+position = Vector2(673, 313)
+script = ExtResource("13_enemyscript")
+
+[node name="Area2D" type="Area2D" parent="Enemy" index="0"]
+position = Vector2(9, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" index="0"]
+position = Vector2(581, 212.5)
+shape = SubResource("RectangleShape2D_enemyarea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Area2D" index="1"]
+position = Vector2(579, 213)
+sprite_frames = SubResource("SpriteFrames_vrcmr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
+position = Vector2(582.5, 223.5)
+shape = SubResource("RectangleShape2D_enemybody")
+
+[node name="Note" parent="." index="12" groups=["note"] instance=ExtResource("3_collectible")]
+position = Vector2(539, 750)
+scale = Vector2(3, 3)
+icon = ExtResource("13_e6lid")
+icon_scale = Vector2(0.5, 0.5)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Note" index="2" groups=["note", "notes"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Note/StaticBody2D" index="0" groups=["note"]]
+shape = SubResource("CircleShape2D_notebounce")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="13"]
+visible = false
+position = Vector2(1260, 415)
+sprite_frames = SubResource("SpriteFrames_discgif")
+autoplay = "default"

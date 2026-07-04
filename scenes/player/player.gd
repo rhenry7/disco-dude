@@ -1,3 +1,6 @@
+# Reusable player character; lives in its own scene so any level can instance it.
+# Membership in the "player" group is what lets Collectible detect pickups without
+# a hard reference back to this script.
 extends CharacterBody2D
 
 
@@ -52,8 +55,11 @@ func _physics_process(delta: float) -> void:
 		var collider := col.get_collider()
 		if collider == null:
 			continue
-		if collider.is_in_group("enemy") and col.get_normal().y < -0.5:
+		if collider.is_in_group("notes") and col.get_normal().y < -0.5:
 			velocity.y = SPRING_VELOCITY
 			$Sprite.play("jump")
+			var note: Node = collider.get_parent()
+			if note is Collectible:
+				note.collect()
 			await $Sprite.animation_finished
 			$Sprite.play("idle")
