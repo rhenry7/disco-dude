@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://cqfbj8adtwje6"]
 
 [ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
-[ext_resource type="PackedScene" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://do52gdx757lpq" path="res://scenes/collectibles/collectible.tscn" id="3_collectible"]
 [ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="5_groundimg"]
 [ext_resource type="Texture2D" uid="uid://dk6bawflw5fx0" path="res://GroundNotes/Untitled_Artwork-1 14.png" id="6_3g50r"]
@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bqihhfepa8bc2" path="res://DiscoDaisy/Untitled_Artwork-3 8.png" id="10_iu1m7"]
 [ext_resource type="Texture2D" uid="uid://dhsog7twt6lu0" path="res://DiscoDaisy/Untitled_Artwork-4 8.png" id="11_cywot"]
 [ext_resource type="Texture2D" uid="uid://ym1uq1ukjhnj" path="res://Notes/Notes-3.png" id="13_e6lid"]
-[ext_resource type="Script" uid="uid://bn2srsi5y6p6i" path="res://enemy.gd" id="13_enemyscript"]
+[ext_resource type="Script" uid="uid://b40ytggy6kus6" path="res://goal.gd" id="13_goalscript"]
 [ext_resource type="Texture2D" uid="uid://vfxkhv5jfn0" path="res://disc-gif/Untitled_Artwork-1 12.png" id="16_discgif1"]
 [ext_resource type="Texture2D" uid="uid://b0xju8xh41n6d" path="res://disc-gif/Untitled_Artwork-2 8.png" id="17_discgif2"]
 [ext_resource type="Texture2D" uid="uid://bstaj4os3s7dq" path="res://disc-gif/Untitled_Artwork-3 8.png" id="18_discgif3"]
@@ -24,7 +24,7 @@ resource_local_to_scene = true
 resource_name = "q"
 size = Vector2(1501.8169, 72.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemyarea"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goalarea"]
 size = Vector2(196, 135)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_vrcmr"]
@@ -47,7 +47,7 @@ animations = [{
 "speed": 4.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_enemybody"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goalbody"]
 size = Vector2(141, 171)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_notebounce"]
@@ -82,7 +82,6 @@ offset_left = -444.0
 offset_top = -251.0
 offset_right = 1447.0
 offset_bottom = 1205.0
-color = Color(1, 1, 0.5882353, 1)
 
 [node name="ground" type="Sprite2D" parent="." index="2"]
 visible = false
@@ -111,10 +110,10 @@ texture = ExtResource("7_untitledart1")
 [node name="Instruments" type="Node2D" parent="." index="7"]
 
 [node name="Ground" type="StaticBody2D" parent="." index="8"]
-position = Vector2(-538, 929)
+position = Vector2(-495, 908)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="0"]
-position = Vector2(25, -272)
+position = Vector2(15, -770)
 shape = SubResource("RectangleShape2D_ground")
 
 [node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground/CollisionShape2D" index="0"]
@@ -125,7 +124,7 @@ texture = ExtResource("6_3g50r")
 flip_h = true
 
 [node name="Ground2" type="StaticBody2D" parent="." index="9"]
-position = Vector2(-431, 931)
+position = Vector2(-385, 1005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" index="0"]
 position = Vector2(2185, -270)
@@ -141,25 +140,25 @@ repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(3, 0)
 repeat_times = 11
 
-[node name="Enemy" type="CharacterBody2D" parent="." index="11" groups=["enemy", "note"]]
-position = Vector2(673, 313)
-script = ExtResource("13_enemyscript")
+[node name="Goal" type="CharacterBody2D" parent="." index="11" groups=["goal"]]
+position = Vector2(701, 390)
+script = ExtResource("13_goalscript")
 
-[node name="Area2D" type="Area2D" parent="Enemy" index="0"]
+[node name="Area2D" type="Area2D" parent="Goal" index="0"]
 position = Vector2(9, -1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal/Area2D" index="0"]
 position = Vector2(581, 212.5)
-shape = SubResource("RectangleShape2D_enemyarea")
+shape = SubResource("RectangleShape2D_goalarea")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemy/Area2D" index="1"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Goal/Area2D" index="1"]
 position = Vector2(579, 213)
 sprite_frames = SubResource("SpriteFrames_vrcmr")
 autoplay = "default"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Goal" index="1"]
 position = Vector2(582.5, 223.5)
-shape = SubResource("RectangleShape2D_enemybody")
+shape = SubResource("RectangleShape2D_goalbody")
 
 [node name="Note" parent="." index="12" groups=["note"] instance=ExtResource("3_collectible")]
 position = Vector2(539, 750)
@@ -179,6 +178,7 @@ sprite_frames = SubResource("SpriteFrames_discgif")
 autoplay = "default"
 
 [node name="UntitledArtwork114" type="Sprite2D" parent="." index="14"]
-position = Vector2(572, -206)
+visible = false
+position = Vector2(1608, -45)
 scale = Vector2(2.318644, 2.318644)
 texture = ExtResource("6_3g50r")

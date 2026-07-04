@@ -15,11 +15,10 @@ var collected_items: int = 0
 func _ready() -> void:
 	for collectible in get_tree().get_nodes_in_group("collectibles"):
 		collectible.collected.connect(_on_item_collected)
-	hud.update_progress(collected_items, required_items)
+	hud.set_level(LevelManager.current_index + 1)
 
 
 func _on_item_collected(_item: Collectible) -> void:
 	collected_items += 1
-	hud.update_progress(collected_items, required_items)
 	if collected_items >= required_items:
 		LevelManager.level_completed()

@@ -1,35 +1,29 @@
-[gd_scene load_steps=16 format=3]
+[gd_scene load_steps=15 format=3 uid="uid://xcvx7pwsum8b"]
 
-[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_player"]
-[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-1 10.png" id="2_idle1"]
-[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-2 7.png" id="3_idle2"]
-[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-3 7.png" id="4_idle3"]
-[ext_resource type="Texture2D" path="res://disco-dude-idle/Untitled_Artwork-4 7.png" id="5_idle4"]
-[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-1 10.png" id="6_jump1"]
-[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-2 7.png" id="7_jump2"]
-[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-3 7.png" id="8_jump3"]
-[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-4 7.png" id="9_jump4"]
-[ext_resource type="Texture2D" path="res://disco-dude-jump/Untitled_Artwork-5 6.png" id="10_jump5"]
-[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-1 10.png" id="11_run1"]
-[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-2 7.png" id="12_run2"]
-[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-3 7.png" id="13_run3"]
-[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-4 7.png" id="14_run4"]
-[ext_resource type="Texture2D" path="res://disco-dude-run/Untitled_Artwork-5 6.png" id="15_run5"]
+[ext_resource type="Script" uid="uid://dctdit7u3bd50" path="res://scenes/player/player.gd" id="1_player"]
+[ext_resource type="Texture2D" uid="uid://br6tknnq428p3" path="res://DiscoDude/Untitled_Artwork-1 15.png" id="2_fm80t"]
+[ext_resource type="Texture2D" uid="uid://dkksc5i5wogsv" path="res://DiscoDude/Untitled_Artwork-2 11.png" id="3_gx1jg"]
+[ext_resource type="Texture2D" uid="uid://bfpejxibwyjr8" path="res://DiscoDude/Untitled_Artwork-6 5.png" id="4_ugbui"]
+[ext_resource type="Texture2D" uid="uid://do7b6k5d07d67" path="res://DiscoDude/Untitled_Artwork-3 10.png" id="5_fcs02"]
+[ext_resource type="Texture2D" uid="uid://cyg5hxrw2gyem" path="res://DiscoDude/Untitled_Artwork-4 9.png" id="6_myrg7"]
+[ext_resource type="Texture2D" uid="uid://bnw7lfj5ntqie" path="res://DiscoDude/Untitled_Artwork-5 6.png" id="7_kvlxm"]
+[ext_resource type="Texture2D" uid="uid://8dphnb7jvoc3" path="res://DiscoDude/Untitled_Artwork-7 4.png" id="8_uf5tr"]
+[ext_resource type="Texture2D" uid="uid://beqqiot01mbro" path="res://DiscoDude/Untitled_Artwork-8 4.png" id="9_lgqa7"]
+[ext_resource type="Texture2D" uid="uid://chjry8gt888fi" path="res://DiscoDude/Untitled_Artwork-9 4.png" id="10_8ydkj"]
+[ext_resource type="Texture2D" uid="uid://dveju714t3wh" path="res://DiscoDude/Untitled_Artwork-10 2.png" id="11_3j4b4"]
+[ext_resource type="Texture2D" uid="uid://65w05a0wvld4" path="res://DiscoDude/Untitled_Artwork-11 2.png" id="12_yj68g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_player"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_idle1")
+"texture": ExtResource("2_fm80t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_idle2")
+"texture": ExtResource("3_gx1jg")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_idle3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_idle4")
+"texture": ExtResource("4_ugbui")
 }],
 "loop": true,
 "name": &"idle",
@@ -37,19 +31,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_jump1")
+"texture": ExtResource("2_fm80t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_jump2")
+"texture": ExtResource("5_fcs02")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_jump3")
+"texture": ExtResource("6_myrg7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_jump4")
+"texture": ExtResource("7_kvlxm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_jump5")
+"texture": ExtResource("4_ugbui")
 }],
 "loop": false,
 "name": &"jump",
@@ -57,19 +51,19 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("11_run1")
+"texture": ExtResource("8_uf5tr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_run2")
+"texture": ExtResource("9_lgqa7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_run3")
+"texture": ExtResource("10_8ydkj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("14_run4")
+"texture": ExtResource("11_3j4b4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("15_run5")
+"texture": ExtResource("12_yj68g")
 }],
 "loop": true,
 "name": &"run",

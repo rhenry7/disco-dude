@@ -12,4 +12,4 @@ offset_right = 224.0
 offset_bottom = 56.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 32
-text = "0 / 1"
+text = "Level 1"

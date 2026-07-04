@@ -25,7 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://e6tjfe1thaf8" path="res://guitar.png" id="24_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://cfy0mh361o80k" path="res://Untitled_Artwork 2.png" id="25_0odxb"]
 [ext_resource type="Texture2D" uid="uid://4wt4an4qykwr" path="res://clipart4181691.png" id="26_lswn8"]
-[ext_resource type="Script" uid="uid://bn2srsi5y6p6i" path="res://enemy.gd" id="27_kq58d"]
+[ext_resource type="Script" uid="uid://b40ytggy6kus6" path="res://goal.gd" id="27_kq58d"]
 [ext_resource type="Texture2D" uid="uid://du28cog1bjijl" path="res://3961145-200.png" id="28_xuqvo"]
 [ext_resource type="Texture2D" uid="uid://vfxkhv5jfn0" path="res://disc-gif/Untitled_Artwork-1 12.png" id="29_htxhm"]
 [ext_resource type="Texture2D" uid="uid://j45ss1lua3cq" path="res://ChatGPT Image Jul 2, 2026, 04_44_32 PM.png" id="29_qsp4k"]
@@ -216,23 +216,23 @@ repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(3, 0)
 repeat_times = 11
 
-[node name="Enemy" type="CharacterBody2D" parent="." groups=["enemy"]]
+[node name="goal" type="CharacterBody2D" parent="." groups=["goal"]]
 position = Vector2(-150, -116)
 script = ExtResource("27_kq58d")
 
-[node name="Area2D" type="Area2D" parent="Enemy"]
+[node name="Area2D" type="Area2D" parent="goal"]
 position = Vector2(9, -1)
 
-[node name="UntitledArtwork2" type="Sprite2D" parent="Enemy/Area2D"]
+[node name="UntitledArtwork2" type="Sprite2D" parent="goal/Area2D"]
 position = Vector2(579.99994, 195)
 scale = Vector2(1.0515466, 1.0515463)
 texture = ExtResource("25_0odxb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal/Area2D"]
 position = Vector2(581, 212.5)
 shape = SubResource("RectangleShape2D_lswn8")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="goal"]
 position = Vector2(582.5, 214.5)
 shape = SubResource("RectangleShape2D_a6jrf")
 
