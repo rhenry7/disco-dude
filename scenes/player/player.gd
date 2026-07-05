@@ -5,17 +5,19 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -600.0
+const JUMP_VELOCITY = -200.0
 const SPRING_VELOCITY = -700.0
 
-# A "ladder" body (e.g. Ground1 in level_02) is a single StaticBody2D with many
-# stacked CollisionShape2D steps whose gaps are narrower than the player is
-# tall. That means the player's body always overlaps more than one step at
-# once, so only ever letting exactly one step on that body be solid — and
-# shifting which one on jump/drop — avoids being wedged between two at a time.
-var _ladder_body: Node = null
-var _ladder_steps: Array[CollisionShape2D] = []
-var _current_step: CollisionShape2D = null
+# A "ladder" is a container (e.g. Ladder/Ladder2 in level_02) of separate
+# StaticBody2D steps in the "ladder_step" group, spaced closer together than
+# the player is tall. Rather than disabling a step's shape — which would make
+# it non-solid for every body, including enemies resting on it — the player
+# adds a collision exception with every step except the one it's currently
+# standing on. Exceptions are scoped to this body only, so other bodies still
+# collide with every step normally.
+var _ladder_container: Node = null
+var _ladder_steps: Array[StaticBody2D] = []
+var _current_step: StaticBody2D = null
 
 
 func _ready() -> void:
@@ -78,50 +80,51 @@ func _physics_process(delta: float) -> void:
 				note.collect()
 			await $Sprite.animation_finished
 			$Sprite.play("idle")
-		elif collider is CollisionObject2D and col.get_normal().y < -0.5:
-			var shape_owner: int = collider.shape_find_owner(col.get_collider_shape_index())
-			var step := collider.shape_owner_get_owner(shape_owner) as CollisionShape2D
-			if step != null:
-				_on_landed(step)
+		elif collider is StaticBody2D and col.get_normal().y < -0.5:
+			_on_landed(collider)
 
 
-## Called whenever the player lands on top of a CollisionShape2D. Establishes
-## (or updates) which single step on that body is allowed to be solid.
-func _on_landed(step: CollisionShape2D) -> void:
+## Called whenever the player lands on top of a StaticBody2D. If it's a
+## tagged ladder step, establishes (or updates) which single step of that
+## ladder the player is allowed to collide with.
+func _on_landed(step: StaticBody2D) -> void:
 	if step == _current_step:
 		return
 
-	var body := step.get_parent()
-	if body != _ladder_body:
-		_reset_ladder()
-		var siblings: Array[CollisionShape2D] = []
-		for child in body.get_children():
-			if child is CollisionShape2D:
-				siblings.append(child)
-		if siblings.size() > 1:
-			siblings.sort_custom(func(a, b): return a.global_position.y < b.global_position.y)
-			_ladder_body = body
-			_ladder_steps = siblings
-
-	if step in _ladder_steps:
-		_set_active_step(step)
-	else:
+	if not step.is_in_group("ladder_step"):
 		_current_step = step
+		return
+
+	var container := step.get_parent()
+	if container != _ladder_container:
+		_reset_ladder()
+		var siblings: Array[StaticBody2D] = []
+		for child in container.get_children():
+			if child is StaticBody2D and child.is_in_group("ladder_step"):
+				siblings.append(child)
+		siblings.sort_custom(func(a, b): return a.global_position.y < b.global_position.y)
+		_ladder_container = container
+		_ladder_steps = siblings
+
+	_set_active_step(step)
 
 
-## Re-enables every step of the ladder the player just left and clears tracking,
-## so a body isn't left with steps permanently disabled after the player moves on.
+## Clears every collision exception from the ladder the player just left, so a
+## step isn't left permanently passable after the player moves on.
 func _reset_ladder() -> void:
 	for step in _ladder_steps:
-		step.disabled = false
-	_ladder_body = null
+		remove_collision_exception_with(step)
+	_ladder_container = null
 	_ladder_steps.clear()
 	_current_step = null
 
 
-func _set_active_step(step: CollisionShape2D) -> void:
+func _set_active_step(step: StaticBody2D) -> void:
 	for s in _ladder_steps:
-		s.disabled = s != step
+		if s == step:
+			remove_collision_exception_with(s)
+		else:
+			add_collision_exception_with(s)
 	_current_step = step
 
 
@@ -136,7 +139,7 @@ func _shift_ladder_step(direction: int) -> void:
 	if target_index >= _ladder_steps.size():
 		# Off the bottom of the ladder — let the player drop freely instead of
 		# indexing past the last step.
-		_current_step.disabled = true
+		add_collision_exception_with(_current_step)
 		_current_step = null
 		return
 	_set_active_step(_ladder_steps[target_index])

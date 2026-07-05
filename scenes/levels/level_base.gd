@@ -7,15 +7,12 @@ class_name LevelBase
 ## Editable per-level from the Inspector on each inherited scene.
 @export var required_items: int = 1
 
-@onready var hud: HUD = $HUD
-
 var collected_items: int = 0
 
 
 func _ready() -> void:
 	for collectible in get_tree().get_nodes_in_group("collectibles"):
 		collectible.collected.connect(_on_item_collected)
-	hud.set_level(LevelManager.current_index + 1)
 
 
 func _on_item_collected(_item: Collectible) -> void:
