@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxwja2xftuerq"]
+[gd_scene load_steps=9 format=3 uid="uid://cxwja2xftuerq"]
 
 [ext_resource type="Texture2D" uid="uid://cfy0mh361o80k" path="res://Untitled_Artwork 2.png" id="1_ps4tf"]
+[ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="1_r8ojw"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="2_lcxk4"]
 [ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="2_ps4tf"]
 [ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="3_r8ojw"]
@@ -15,10 +16,15 @@ size = Vector2(2196.5, 316.5)
 [node name="level_03" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -170.63806
-offset_top = -88.0
-offset_right = 1811.6381
-offset_bottom = 1456.0
+offset_left = -65.0
+offset_top = -13.0
+offset_right = 1827.0
+offset_bottom = 1418.0
+
+[node name="bg transparent" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.05882353)
+position = Vector2(856, 783)
+texture = ExtResource("1_r8ojw")
 
 [node name="Area2D" type="StaticBody2D" parent="." groups=["notes"]]
 position = Vector2(-292, -360)
@@ -33,7 +39,7 @@ position = Vector2(1070, 1309.0313)
 shape = SubResource("RectangleShape2D_dm2hg")
 
 [node name="Goal" parent="Area2D" instance=ExtResource("2_ps4tf")]
-position = Vector2(1356, 1056)
+position = Vector2(1357, 1055)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

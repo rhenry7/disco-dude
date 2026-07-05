@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c4gks1e0b8m1v"]
+[gd_scene load_steps=9 format=3 uid="uid://c4gks1e0b8m1v"]
 
 [ext_resource type="Script" uid="uid://b40ytggy6kus6" path="res://scenes/goal/goal.gd" id="1_goalscript"]
 [ext_resource type="Texture2D" uid="uid://khg54ck7uxkg" path="res://DiscoDaisy/Untitled_Artwork-1 13.png" id="2_frame1"]
@@ -30,7 +30,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goalbody"]
-size = Vector2(141, 171)
+size = Vector2(141, 167)
 
 [node name="Goal" type="CharacterBody2D" groups=["goal"]]
 script = ExtResource("1_goalscript")
@@ -48,5 +48,5 @@ sprite_frames = SubResource("SpriteFrames_goal")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(582.5, 223.5)
+position = Vector2(582.5, 221.5)
 shape = SubResource("RectangleShape2D_goalbody")

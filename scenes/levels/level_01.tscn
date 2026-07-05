@@ -1,6 +1,7 @@
-[gd_scene load_steps=19 format=3 uid="uid://cqfbj8adtwje6"]
+[gd_scene load_steps=20 format=3 uid="uid://cqfbj8adtwje6"]
 
 [ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
+[ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="2_cwffn"]
 [ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://do52gdx757lpq" path="res://scenes/collectibles/collectible.tscn" id="3_collectible"]
 [ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="5_groundimg"]
@@ -54,47 +55,52 @@ offset_top = -251.0
 offset_right = 1447.0
 offset_bottom = 1205.0
 
-[node name="ground" type="Sprite2D" parent="." index="2"]
+[node name="bg transparent" type="Sprite2D" parent="." index="1"]
+self_modulate = Color(1, 1, 1, 0.05882353)
+position = Vector2(470, 738)
+texture = ExtResource("2_cwffn")
+
+[node name="ground" type="Sprite2D" parent="." index="3"]
 visible = false
 position = Vector2(255, 506)
 texture = ExtResource("5_groundimg")
 
-[node name="Player" parent="." index="3" instance=ExtResource("2_player")]
+[node name="Player" parent="." index="4" instance=ExtResource("2_player")]
 position = Vector2(0, -121)
 
-[node name="MusicSheet12754851280" type="Sprite2D" parent="." index="4"]
+[node name="MusicSheet12754851280" type="Sprite2D" parent="." index="5"]
 visible = false
 position = Vector2(409.99997, 297)
 scale = Vector2(0.90168285, 0.9016829)
 texture = ExtResource("6_musicsheet")
 
-[node name="UntitledArtwork110" type="Sprite2D" parent="." index="5"]
+[node name="UntitledArtwork110" type="Sprite2D" parent="." index="6"]
 visible = false
 position = Vector2(539, 449)
 texture = ExtResource("7_untitledart1")
 
-[node name="UntitledArtwork111" type="Sprite2D" parent="." index="6"]
+[node name="UntitledArtwork111" type="Sprite2D" parent="." index="7"]
 visible = false
 position = Vector2(-821, 449)
 texture = ExtResource("7_untitledart1")
 
-[node name="Instruments" type="Node2D" parent="." index="7"]
+[node name="Instruments" type="Node2D" parent="." index="8"]
 
-[node name="Ground" type="StaticBody2D" parent="." index="8"]
+[node name="Ground" type="StaticBody2D" parent="." index="9"]
 position = Vector2(-495, 908)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="0"]
-position = Vector2(15, -770)
-shape = SubResource("RectangleShape2D_ground")
-
-[node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground/CollisionShape2D" index="0"]
+[node name="ChatGptImageJul2,2026,044432Pm" type="Sprite2D" parent="Ground" index="0"]
 modulate = Color(0.14213324, 0.14213324, 0.14213324, 1)
-position = Vector2(-742, 218)
-scale = Vector2(2.5300798, 2.901695)
+position = Vector2(194, -710)
+scale = Vector2(0.9635589, 1.1050853)
 texture = ExtResource("6_3g50r")
 flip_h = true
 
-[node name="Ground2" type="StaticBody2D" parent="." index="9"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" index="1"]
+position = Vector2(15, -770)
+shape = SubResource("RectangleShape2D_ground")
+
+[node name="Ground2" type="StaticBody2D" parent="." index="10"]
 position = Vector2(-385, 1005)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2" index="0"]
@@ -106,38 +112,40 @@ position = Vector2(146, 132)
 scale = Vector2(1.5339997, 1.7593119)
 texture = ExtResource("7_iu1m7")
 
-[node name="Parallax2D" type="Parallax2D" parent="." index="10"]
+[node name="Parallax2D" type="Parallax2D" parent="." index="11"]
 repeat_size = Vector2(3000, 0)
 autoscroll = Vector2(3, 0)
 repeat_times = 11
 
-[node name="Goal" parent="." index="11" instance=ExtResource("13_goalscene")]
+[node name="Goal" parent="." index="12" instance=ExtResource("13_goalscene")]
 position = Vector2(701, 390)
 
-[node name="Note" parent="." index="12" groups=["note"] instance=ExtResource("3_collectible")]
+[node name="Note" parent="." index="13" groups=["note"] instance=ExtResource("3_collectible")]
 position = Vector2(539, 750)
 scale = Vector2(3, 3)
 icon = ExtResource("13_e6lid")
 icon_scale = Vector2(0.5, 0.5)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Note" index="2" groups=["note", "notes"]]
+position = Vector2(-3.3333335, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Note/StaticBody2D" index="0" groups=["note"]]
+position = Vector2(7, 0)
 shape = SubResource("CircleShape2D_notebounce")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="13"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="14"]
 visible = false
 position = Vector2(1260, 415)
 sprite_frames = SubResource("SpriteFrames_discgif")
 autoplay = "default"
 
-[node name="UntitledArtwork114" type="Sprite2D" parent="." index="14"]
+[node name="UntitledArtwork114" type="Sprite2D" parent="." index="15"]
 visible = false
 position = Vector2(1608, -45)
 scale = Vector2(2.318644, 2.318644)
 texture = ExtResource("6_3g50r")
 
-[node name="Refresh(1)" type="Sprite2D" parent="." index="15"]
+[node name="Refresh(1)" type="Sprite2D" parent="." index="16"]
 visible = false
 position = Vector2(1317.0001, -163)
 scale = Vector2(0.22265595, 0.22265595)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://de5eubmhuh087"]
+[gd_scene load_steps=12 format=3 uid="uid://de5eubmhuh087"]
 
 [ext_resource type="Texture2D" uid="uid://btegcn4v4bt0p" path="res://ChatGPT Image Jul 2, 2026, 02_17_36 PM.png" id="1_vq1pa"]
+[ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="1_yjjx0"]
 [ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://p3r1uyb0hyje" path="res://scenes/ui/hud.tscn" id="3_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="4_3acmf"]
@@ -31,6 +32,11 @@ offset_left = -44.0
 offset_top = -135.0
 offset_right = 1823.0
 offset_bottom = 1353.0
+
+[node name="UntitledArtwork115" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.05882353)
+position = Vector2(884, 650)
+texture = ExtResource("1_yjjx0")
 
 [node name="Ladder" type="Node2D" parent="."]
 position = Vector2(532, -8)
