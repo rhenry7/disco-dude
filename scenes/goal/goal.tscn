@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4gks1e0b8m1v"]
+
+[ext_resource type="Script" uid="uid://b40ytggy6kus6" path="res://scenes/goal/goal.gd" id="1_goalscript"]
+[ext_resource type="Texture2D" uid="uid://khg54ck7uxkg" path="res://DiscoDaisy/Untitled_Artwork-1 13.png" id="2_frame1"]
+[ext_resource type="Texture2D" uid="uid://c2r0xclv1yusd" path="res://DiscoDaisy/Untitled_Artwork-2 9.png" id="3_frame2"]
+[ext_resource type="Texture2D" uid="uid://bqihhfepa8bc2" path="res://DiscoDaisy/Untitled_Artwork-3 8.png" id="4_frame3"]
+[ext_resource type="Texture2D" uid="uid://dhsog7twt6lu0" path="res://DiscoDaisy/Untitled_Artwork-4 8.png" id="5_frame4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goalarea"]
+size = Vector2(196, 135)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_goal"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_frame1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_frame2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_frame3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_frame4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goalbody"]
+size = Vector2(141, 171)
+
+[node name="Goal" type="CharacterBody2D" groups=["goal"]]
+script = ExtResource("1_goalscript")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(9, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(581, 212.5)
+shape = SubResource("RectangleShape2D_goalarea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(579, 213)
+sprite_frames = SubResource("SpriteFrames_goal")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(582.5, 223.5)
+shape = SubResource("RectangleShape2D_goalbody")

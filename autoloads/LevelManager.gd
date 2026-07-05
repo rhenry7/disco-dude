@@ -5,6 +5,7 @@ extends Node
 ## Level scenes in play order. Add a path here to add a level — no script changes needed.
 @export var levels: Array[String] = [
 	"res://scenes/levels/level_01.tscn",
+	"res://scenes/levels/level_02.tscn",
 ]
 
 var current_index: int = 0
