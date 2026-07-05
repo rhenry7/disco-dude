@@ -6,6 +6,7 @@ extends Node
 @export var levels: Array[String] = [
 	"res://scenes/levels/level_01.tscn",
 	"res://scenes/levels/level_02.tscn",
+	"res://scenes/levels/level_03.tscn",
 ]
 
 var current_index: int = 0

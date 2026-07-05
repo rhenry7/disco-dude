@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -200.0
+const JUMP_VELOCITY = -500.0
 const SPRING_VELOCITY = -700.0
 
 # A "ladder" is a container (e.g. Ladder/Ladder2 in level_02) of separate

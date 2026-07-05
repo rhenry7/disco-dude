@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cxwja2xftuerq"]
+
+[ext_resource type="Texture2D" uid="uid://cfy0mh361o80k" path="res://Untitled_Artwork 2.png" id="1_ps4tf"]
+[ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="2_lcxk4"]
+[ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="2_ps4tf"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="3_r8ojw"]
+[ext_resource type="PackedScene" uid="uid://p3r1uyb0hyje" path="res://scenes/ui/hud.tscn" id="5_lcxk4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dm2hg"]
+size = Vector2(136, 108.0625)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1tw3a"]
+size = Vector2(2196.5, 316.5)
+
+[node name="level_03" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -170.63806
+offset_top = -88.0
+offset_right = 1811.6381
+offset_bottom = 1456.0
+
+[node name="Area2D" type="StaticBody2D" parent="." groups=["notes"]]
+position = Vector2(-292, -360)
+
+[node name="UntitledArtwork2" type="Sprite2D" parent="Area2D"]
+position = Vector2(1069, 1280)
+scale = Vector2(0.93814445, 0.9381447)
+texture = ExtResource("1_ps4tf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1070, 1309.0313)
+shape = SubResource("RectangleShape2D_dm2hg")
+
+[node name="Goal" parent="Area2D" instance=ExtResource("2_ps4tf")]
+position = Vector2(1356, 1056)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="UntitledArtwork110" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(894, 1649)
+scale = Vector2(1.8045453, 1.8045454)
+texture = ExtResource("2_lcxk4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(883, 1163)
+shape = SubResource("RectangleShape2D_1tw3a")
+
+[node name="Player" parent="." instance=ExtResource("3_r8ojw")]
+position = Vector2(295, 850)
+
+[node name="HUD" parent="." instance=ExtResource("5_lcxk4")]

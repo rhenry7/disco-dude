@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://u0ixs4hchkat"
-path="res://.godot/imported/music-sheet-1275485_1280.png-dadbc25318f1e9e625904938cdea7d45.ctex"
+path="res://.godot/imported/complex-sheet-vivace.png-9ad6534506a0b80fb8f1c0cef4e59c0b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://music-sheet-1275485_1280.png"
-dest_files=["res://.godot/imported/music-sheet-1275485_1280.png-dadbc25318f1e9e625904938cdea7d45.ctex"]
+source_file="res://complex-sheet-vivace.png"
+dest_files=["res://.godot/imported/complex-sheet-vivace.png-9ad6534506a0b80fb8f1c0cef4e59c0b.ctex"]
 
 [params]
 

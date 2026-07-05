@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://do52gdx757lpq" path="res://scenes/collectibles/collectible.tscn" id="3_collectible"]
 [ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="5_groundimg"]
 [ext_resource type="Texture2D" uid="uid://dk6bawflw5fx0" path="res://GroundNotes/Untitled_Artwork-1 14.png" id="6_3g50r"]
-[ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://music-sheet-1275485_1280.png" id="6_musicsheet"]
+[ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://complex-sheet-vivace.png" id="6_musicsheet"]
 [ext_resource type="Texture2D" uid="uid://by6wpe04gajlg" path="res://GroundNotes/Untitled_Artwork-3 9.png" id="7_iu1m7"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="7_untitledart1"]
 [ext_resource type="Texture2D" uid="uid://ym1uq1ukjhnj" path="res://Notes/Notes-3.png" id="13_e6lid"]

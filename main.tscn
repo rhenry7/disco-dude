@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cd1ndxe1h50uu" path="res://disco-dude-run/Untitled_Artwork-3 7.png" id="15_82xsv"]
 [ext_resource type="Texture2D" uid="uid://cusm7npg0qwsb" path="res://disco-dude-run/Untitled_Artwork-4 7.png" id="16_getpj"]
 [ext_resource type="Texture2D" uid="uid://bj2kef05qu17r" path="res://disco-dude-run/Untitled_Artwork-5 6.png" id="17_ryguw"]
-[ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://music-sheet-1275485_1280.png" id="19_cegan"]
+[ext_resource type="Texture2D" uid="uid://u0ixs4hchkat" path="res://complex-sheet-vivace.png" id="19_cegan"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="20_82xsv"]
 [ext_resource type="Script" path="res://score.gd" id="21_getpj"]
 [ext_resource type="Texture2D" uid="uid://ccub4fa8uwu1a" path="res://ChatGPT Image Jul 1, 2026, 04_26_26 PM.png" id="23_1u8w0"]
