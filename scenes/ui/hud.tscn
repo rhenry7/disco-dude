@@ -1,15 +1,64 @@
-[gd_scene load_steps=2 format=3 uid="uid://p3r1uyb0hyje"]
+[gd_scene load_steps=7 format=3 uid="uid://p3r1uyb0hyje"]
 
 [ext_resource type="Script" uid="uid://c5dqvp8vo1l2s" path="res://scenes/ui/hud.gd" id="1_hud"]
+[ext_resource type="Texture2D" uid="uid://cddwwpa4botif" path="res://UI_Icons/play.png" id="2_play"]
+[ext_resource type="Texture2D" uid="uid://byf4q4kvmekf1" path="res://UI_Icons/pause.png" id="3_pause"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_restart"]
+atlas = ExtResource("2_play")
+region = Rect2(41, 114, 138, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_next"]
+atlas = ExtResource("2_play")
+region = Rect2(1138, 114, 138, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pause_icon"]
+atlas = ExtResource("3_pause")
+region = Rect2(610, 111, 126, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_play_icon"]
+atlas = ExtResource("2_play")
+region = Rect2(610, 111, 126, 178)
 
 [node name="HUD" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_hud")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 24.0
+offset_left = 16.0
 offset_top = 16.0
-offset_right = 224.0
-offset_bottom = 56.0
+offset_right = 216.0
+offset_bottom = 65.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 35
 text = "Level 1"
+
+[node name="Controls" type="HBoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -276.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = 80.0
+theme_override_constants/separation = 12
+
+[node name="RestartButton" type="TextureButton" parent="Controls"]
+custom_minimum_size = Vector2(64, 64)
+texture_normal = SubResource("AtlasTexture_restart")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PlayPauseButton" type="TextureButton" parent="Controls"]
+custom_minimum_size = Vector2(64, 64)
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_pause_icon")
+texture_pressed = SubResource("AtlasTexture_play_icon")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="NextButton" type="TextureButton" parent="Controls"]
+custom_minimum_size = Vector2(64, 64)
+texture_normal = SubResource("AtlasTexture_next")
+ignore_texture_size = true
+stretch_mode = 5

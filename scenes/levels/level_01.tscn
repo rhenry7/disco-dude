@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cqfbj8adtwje6"]
+[gd_scene load_steps=26 format=3 uid="uid://cqfbj8adtwje6"]
 
 [ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
 [ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_player"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://b0xju8xh41n6d" path="res://disc-gif/Untitled_Artwork-2 8.png" id="17_discgif2"]
 [ext_resource type="Texture2D" uid="uid://bstaj4os3s7dq" path="res://disc-gif/Untitled_Artwork-3 8.png" id="18_discgif3"]
 [ext_resource type="Texture2D" uid="uid://e1desba7q6au" path="res://disc-gif/Untitled_Artwork-4 8.png" id="19_discgif4"]
+[ext_resource type="Texture2D" uid="uid://b8qrb5uqcnrjg" path="res://UI_Icons/refresh (1).png" id="19_iu1m7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ground"]
 resource_local_to_scene = true
@@ -182,3 +183,9 @@ visible = false
 position = Vector2(1608, -45)
 scale = Vector2(2.318644, 2.318644)
 texture = ExtResource("6_3g50r")
+
+[node name="Refresh(1)" type="Sprite2D" parent="." index="15"]
+visible = false
+position = Vector2(1317.0001, -163)
+scale = Vector2(0.22265595, 0.22265595)
+texture = ExtResource("19_iu1m7")

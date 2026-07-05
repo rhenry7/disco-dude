@@ -11,6 +11,7 @@ var current_index: int = 0
 
 
 func level_completed() -> void:
+	get_tree().paused = false
 	current_index += 1
 	if current_index < levels.size():
 		get_tree().change_scene_to_file(levels[current_index])
@@ -19,4 +20,5 @@ func level_completed() -> void:
 
 
 func restart_level() -> void:
+	get_tree().paused = false
 	get_tree().reload_current_scene()

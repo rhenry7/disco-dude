@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbtaa107u7xys"]
+
+[ext_resource type="Texture2D" uid="uid://cddwwpa4botif" path="res://UI_Icons/play.png" id="1_hxx4o"]
+[ext_resource type="Texture2D" uid="uid://byf4q4kvmekf1" path="res://UI_Icons/pause.png" id="2_u5wkr"]
+
+[node name="Node2D" type="TextureButton"]
+anchors_preset = -1
+anchor_top = 0.066
+anchor_bottom = 0.066
+offset_top = -91.4
+offset_right = 357.50867
+offset_bottom = 0.5999985
+texture_normal = ExtResource("1_hxx4o")
+texture_pressed = ExtResource("2_u5wkr")
+ignore_texture_size = true
+stretch_mode = 0
