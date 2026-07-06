@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://e8n0481dtcdo"]
+[gd_scene load_steps=40 format=3 uid="uid://e8n0481dtcdo"]
 
 [ext_resource type="Texture2D" uid="uid://crkvjpty6lii2" path="res://ChorusLevel/Untitled_Artwork-9 4.png" id="1_o3rdr"]
 [ext_resource type="Texture2D" uid="uid://bq4p2uycxkca7" path="res://ChorusLevel/Untitled_Artwork-16.png" id="2_lr2mp"]
@@ -16,6 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bl3qkd0ql77ff" path="res://ChorusLevel/Untitled_Artwork-2 11.png" id="14_vwuh2"]
 [ext_resource type="Texture2D" uid="uid://dofpyl11er0rk" path="res://ChorusLevel/Untitled_Artwork-17.png" id="15_ec0pt"]
 [ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="16_uu5oa"]
+[ext_resource type="Texture2D" uid="uid://ddbd7cygevygd" path="res://Screenshot 2026-07-05 at 9.29.33 PM-modified.png" id="16_vmerw"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player.tscn" id="17_lr2mp"]
+[ext_resource type="Script" uid="uid://dftw8btkhtu7" path="res://scenes/levels/falling_word.gd" id="18_fallword"]
+[ext_resource type="PackedScene" uid="uid://p3r1uyb0hyje" path="res://scenes/ui/hud.tscn" id="20_sibhc"]
+[ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="21_vdcoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i7p7m"]
 size = Vector2(205.5, 143.5)
@@ -42,25 +47,34 @@ size = Vector2(85, 71.25)
 size = Vector2(54, 69)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1f6xj"]
-size = Vector2(54, 70)
+size = Vector2(43, 66.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmerw"]
+size = Vector2(76.5, 68)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6m61h"]
-size = Vector2(85, 71.5)
+size = Vector2(175.5, 71.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rfj36"]
-size = Vector2(88.75, 78.5)
+size = Vector2(181.375, 80.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q30wr"]
-size = Vector2(140.5, 72.5)
+size = Vector2(73.25, 62.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b03hd"]
-size = Vector2(136.5, 83.5)
+size = Vector2(98.25, 75.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ckay5"]
 size = Vector2(108, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b0wbp"]
-size = Vector2(230, 139)
+size = Vector2(402, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1re1"]
+size = Vector2(533, 170.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vdcoq"]
+size = Vector2(525.5, 200)
 
 [node name="level_04" type="Node2D"]
 
@@ -70,168 +84,220 @@ offset_top = -32.0
 offset_right = 1826.0
 offset_bottom = 1432.0
 
-[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="lyric" type="Node2D" parent="ColorRect"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D"]
+[node name="StaticBody2D" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D"]
 position = Vector2(688.25, 814.25)
 shape = SubResource("RectangleShape2D_i7p7m")
 
-[node name="Cover" type="Sprite2D" parent="ColorRect/StaticBody2D"]
+[node name="Cover" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D"]
 position = Vector2(1013, 746)
 texture = ExtResource("1_o3rdr")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D2" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="I" type="Sprite2D" parent="ColorRect/StaticBody2D2"]
+[node name="I" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D2"]
 position = Vector2(1020, 746)
 texture = ExtResource("2_lr2mp")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D2"]
 position = Vector2(666, 677.75)
 shape = SubResource("RectangleShape2D_afct4")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D3" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="C#m" type="Sprite2D" parent="ColorRect/StaticBody2D3"]
+[node name="C#m" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D3"]
 position = Vector2(1020, 746)
 texture = ExtResource("3_vmerw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D3"]
 position = Vector2(660, 776.5)
 shape = SubResource("RectangleShape2D_lqu3g")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D4" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="lies" type="Sprite2D" parent="ColorRect/StaticBody2D4"]
+[node name="lies" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D4"]
 position = Vector2(1020, 746)
 texture = ExtResource("4_x1re1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D4"]
 position = Vector2(1275.875, 852.75)
 shape = SubResource("RectangleShape2D_1a7k5")
 
-[node name="StaticBody2D5" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D5" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="with" type="Sprite2D" parent="ColorRect/StaticBody2D5"]
+[node name="with" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D5"]
 position = Vector2(1020, 746)
 texture = ExtResource("5_sibhc")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D5"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D5"]
 position = Vector2(1127, 850.125)
 shape = SubResource("RectangleShape2D_x5hhl")
 
-[node name="StaticBody2D6" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D6" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="up" type="Sprite2D" parent="ColorRect/StaticBody2D6"]
+[node name="up" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D6"]
 position = Vector2(1020, 746)
 texture = ExtResource("6_vdcoq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D6"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D6"]
 position = Vector2(999.375, 854.75)
 shape = SubResource("RectangleShape2D_4w8xk")
 
-[node name="StaticBody2D7" type="StaticBody2D" parent="ColorRect"]
-visible = false
+[node name="StaticBody2D7" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="all" type="Sprite2D" parent="ColorRect/StaticBody2D7"]
+[node name="all" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D7"]
 visible = false
 position = Vector2(1020, 746)
 texture = ExtResource("7_fy4m5")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D7"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D7"]
 visible = false
 position = Vector2(904.5, 850.375)
 shape = SubResource("RectangleShape2D_uxfkd")
 
-[node name="StaticBody2D8" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D8" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="it" type="Sprite2D" parent="ColorRect/StaticBody2D8"]
+[node name="it" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D8"]
 position = Vector2(1020, 746)
 texture = ExtResource("8_axo1c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D8"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D8"]
 position = Vector2(828, 851.5)
 shape = SubResource("RectangleShape2D_maafn")
 
-[node name="StaticBody2D9" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D9" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="it," type="Sprite2D" parent="ColorRect/StaticBody2D9"]
+[node name="it," type="Sprite2D" parent="ColorRect/lyric/StaticBody2D9"]
 position = Vector2(1020, 746)
 texture = ExtResource("9_mf6hd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D9"]
-position = Vector2(828, 852)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D9"]
+position = Vector2(1284, 684)
 shape = SubResource("RectangleShape2D_1f6xj")
 
-[node name="StaticBody2D10" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D16" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="about" type="Sprite2D" parent="ColorRect/StaticBody2D10"]
+[node name="UntitledArtwork75" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D16"]
+position = Vector2(1022, 750)
+texture = ExtResource("7_fy4m5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D16"]
+position = Vector2(906, 852)
+shape = SubResource("RectangleShape2D_vmerw")
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
+
+[node name="about" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D10"]
 position = Vector2(1020, 746)
 texture = ExtResource("10_5q4vb")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D10"]
-position = Vector2(904.5, 850.75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D10"]
+position = Vector2(1156.25, 679)
 shape = SubResource("RectangleShape2D_6m61h")
 
-[node name="StaticBody2D11" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D11" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="laugh" type="Sprite2D" parent="ColorRect/StaticBody2D11"]
+[node name="laugh" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D11"]
 position = Vector2(1020, 746)
 texture = ExtResource("11_eqf4o")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D11"]
-position = Vector2(999.625, 854.75)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D11"]
+position = Vector2(967.3125, 683.875)
 shape = SubResource("RectangleShape2D_rfj36")
 
-[node name="StaticBody2D12" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D12" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="to" type="Sprite2D" parent="ColorRect/StaticBody2D12"]
+[node name="to" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D12"]
 position = Vector2(1020, 746)
 texture = ExtResource("12_47boq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D12"]
-position = Vector2(1127, 850)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D12"]
+position = Vector2(833.375, 681.875)
 shape = SubResource("RectangleShape2D_q30wr")
 
-[node name="StaticBody2D13" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D13" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="try" type="Sprite2D" parent="ColorRect/StaticBody2D13"]
+[node name="try" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D13"]
 position = Vector2(1020, 746)
 texture = ExtResource("13_8m3pt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D13"]
-position = Vector2(1275.75, 852.25)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D13"]
+position = Vector2(741.875, 691.125)
 shape = SubResource("RectangleShape2D_b03hd")
 
-[node name="StaticBody2D14" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D14" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="Bm" type="Sprite2D" parent="ColorRect/StaticBody2D14"]
+[node name="Bm" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D14"]
 position = Vector2(1021, 746)
 texture = ExtResource("14_vwuh2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D14"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D14"]
 position = Vector2(1263, 777.75)
 shape = SubResource("RectangleShape2D_ckay5")
 
-[node name="StaticBody2D15" type="StaticBody2D" parent="ColorRect"]
+[node name="StaticBody2D15" type="StaticBody2D" parent="ColorRect/lyric" groups=["lyric"]]
+script = ExtResource("18_fallword")
 
-[node name="Prechorus" type="Sprite2D" parent="ColorRect/StaticBody2D15"]
+[node name="Prechorus" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D15"]
 position = Vector2(1020, 746)
 texture = ExtResource("15_ec0pt")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/StaticBody2D15"]
-visible = false
-position = Vector2(185, 208.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D15"]
+position = Vector2(314, 681)
 shape = SubResource("RectangleShape2D_b0wbp")
+
+[node name="StaticBody2D17" type="StaticBody2D" parent="ColorRect/lyric"]
+position = Vector2(-176, 3)
+script = ExtResource("18_fallword")
+
+[node name="tab intro" type="Sprite2D" parent="ColorRect/lyric/StaticBody2D17"]
+position = Vector2(-202, 380)
+scale = Vector2(1.6371787, 1.6371787)
+texture = ExtResource("16_vmerw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ColorRect/lyric/StaticBody2D17"]
+position = Vector2(244.5, 379.75)
+shape = SubResource("RectangleShape2D_x1re1")
 
 [node name="bg transparent" type="Sprite2D" parent="ColorRect"]
 self_modulate = Color(1, 1, 1, 0.05882353)
 position = Vector2(1025.0001, 988.00006)
 scale = Vector2(0.9580078, 0.9370117)
 texture = ExtResource("16_uu5oa")
+
+[node name="Player" parent="ColorRect" instance=ExtResource("17_lr2mp")]
+position = Vector2(150, 105)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Screenshot20260705At9_29_33PmModified" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(2113.0002, 1133)
+scale = Vector2(1.7599994, 1.7599994)
+texture = ExtResource("16_vmerw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1578.25, 1137)
+shape = SubResource("RectangleShape2D_vdcoq")
+
+[node name="HUD" parent="StaticBody2D" instance=ExtResource("20_sibhc")]
+
+[node name="Goal" parent="StaticBody2D" instance=ExtResource("21_vdcoq")]
+position = Vector2(1112, 726)

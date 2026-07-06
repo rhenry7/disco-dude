@@ -80,6 +80,8 @@ func _physics_process(delta: float) -> void:
 				note.collect()
 			await $Sprite.animation_finished
 			$Sprite.play("idle")
+		elif collider.is_in_group("lyric"):
+			collider.fall()
 		elif collider is StaticBody2D and col.get_normal().y < -0.5:
 			_on_landed(collider)
 

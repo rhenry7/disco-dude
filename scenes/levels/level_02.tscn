@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://btegcn4v4bt0p" path="res://ChatGPT Image Jul 2, 2026, 02_17_36 PM.png" id="1_vq1pa"]
 [ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="1_yjjx0"]
-[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_c5o3r"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player.tscn" id="2_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://p3r1uyb0hyje" path="res://scenes/ui/hud.tscn" id="3_c5o3r"]
 [ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="4_3acmf"]
 

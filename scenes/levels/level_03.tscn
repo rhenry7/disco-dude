@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="1_r8ojw"]
 [ext_resource type="Texture2D" uid="uid://bopiu60onsqqg" path="res://Untitled_Artwork-1 10.png" id="2_lcxk4"]
 [ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="2_ps4tf"]
-[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="3_r8ojw"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player.tscn" id="3_r8ojw"]
 [ext_resource type="PackedScene" uid="uid://p3r1uyb0hyje" path="res://scenes/ui/hud.tscn" id="5_lcxk4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm2hg"]

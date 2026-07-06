@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
 [ext_resource type="Texture2D" uid="uid://ds2h6b3cyvj1m" path="res://Untitled_Artwork-1 15.png" id="2_cwffn"]
-[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" uid="uid://xcvx7pwsum8b" path="res://scenes/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" uid="uid://do52gdx757lpq" path="res://scenes/collectibles/collectible.tscn" id="3_collectible"]
 [ext_resource type="Texture2D" uid="uid://bdcb12prtrba2" path="res://manuscript-paper-staff-musical-composition-sheet-music-6b53683dbd2ee5ca19826bb651ceb329.png" id="5_groundimg"]
 [ext_resource type="Texture2D" uid="uid://dk6bawflw5fx0" path="res://GroundNotes/Untitled_Artwork-1 14.png" id="6_3g50r"]
