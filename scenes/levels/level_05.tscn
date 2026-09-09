@@ -1,0 +1,211 @@
+[gd_scene load_steps=19 format=3 uid="uid://detie3kea5b0d"]
+
+[ext_resource type="PackedScene" path="res://scenes/levels/level_base.tscn" id="1_levelbase"]
+[ext_resource type="PackedScene" path="res://scenes/runner_player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/obstacles/platform.tscn" id="3_platform"]
+[ext_resource type="PackedScene" path="res://scenes/obstacles/hazard.tscn" id="4_hazard"]
+[ext_resource type="Texture2D" uid="uid://d0ehuqsls5k40" path="res://platforms/3x/Asset 18@3x.png" id="5_836dv"]
+[ext_resource type="PackedScene" uid="uid://c4gks1e0b8m1v" path="res://scenes/goal/goal.tscn" id="5_goal"]
+[ext_resource type="Texture2D" uid="uid://3dkxwhg47dhv" path="res://platforms/3x/Asset 20@3x.png" id="6_c1tix"]
+[ext_resource type="Script" uid="uid://b38ee4dp4axpl" path="res://scenes/levels/runner_camera.gd" id="6_camera"]
+[ext_resource type="Texture2D" uid="uid://b7hr6ddej2v2p" path="res://platforms/3x/trumpet.png" id="7_nodfw"]
+[ext_resource type="Texture2D" uid="uid://burpm57cbs82j" path="res://platforms/3x/electric-guitar-green.png" id="9_7gy4l"]
+[ext_resource type="PackedScene" path="res://scenes/obstacles/spring_platform.tscn" id="10_spring"]
+[ext_resource type="Texture2D" uid="uid://454mx31sip8d" path="res://platforms/3x/drums-hihats.png" id="11_drums"]
+[ext_resource type="Texture2D" uid="uid://dumct63hbx07x" path="res://background_clouds/3x/Asset 27@3x.png" id="12_cloud27"]
+[ext_resource type="Texture2D" uid="uid://dxpatakqfqjim" path="res://background_clouds/3x/Asset 36@3x.png" id="13_cloud36"]
+[ext_resource type="Texture2D" uid="uid://buq46eroecv1o" path="res://background_clouds/3x/Asset 41@3x.png" id="14_cloud41"]
+[ext_resource type="Texture2D" uid="uid://bm0p8jxgk8sl" path="res://background_clouds/3x/Asset 30@3x.png" id="15_cloud30"]
+[ext_resource type="Texture2D" uid="uid://ccmyfd0hsoodx" path="res://background_clouds/3x/Asset 32@3x.png" id="16_cloud32"]
+[ext_resource type="Texture2D" uid="uid://cyfh0ax5g4kv1" path="res://background_clouds/3x/Asset 38@3x.png" id="17_cloud38"]
+
+[node name="Level05" instance=ExtResource("1_levelbase")]
+required_items = 0
+
+[node name="Background" type="ColorRect" parent="." index="0"]
+show_behind_parent = true
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 8300.0
+offset_bottom = 1450.0
+color = Color(0.988235, 0.964706, 0.894118, 1)
+
+[node name="CloudsFar" type="Parallax2D" parent="." index="2"]
+scroll_scale = Vector2(0.35, 0)
+autoscroll = Vector2(8, 0)
+
+[node name="Cloud1" type="Sprite2D" parent="CloudsFar" index="0"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(330, 261)
+texture = ExtResource("12_cloud27")
+
+[node name="Cloud2" type="Sprite2D" parent="CloudsFar" index="1"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(900, 80)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("13_cloud36")
+flip_h = true
+
+[node name="Cloud3" type="Sprite2D" parent="CloudsFar" index="2"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(2196, 212)
+scale = Vector2(1.1, 1.1)
+texture = ExtResource("14_cloud41")
+
+[node name="Cloud4" type="Sprite2D" parent="CloudsFar" index="3"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(3100, 100)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("15_cloud30")
+
+[node name="Cloud5" type="Sprite2D" parent="CloudsFar" index="4"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(4564, 198)
+texture = ExtResource("13_cloud36")
+flip_h = true
+
+[node name="Cloud6" type="Sprite2D" parent="CloudsFar" index="5"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(5900, 139)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("14_cloud41")
+
+[node name="Cloud7" type="Sprite2D" parent="CloudsFar" index="6"]
+self_modulate = Color(1, 1, 1, 0.55)
+position = Vector2(8005, 149)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("12_cloud27")
+flip_h = true
+
+[node name="CloudsNear" type="Parallax2D" parent="." index="3"]
+scroll_scale = Vector2(0.55, 0)
+autoscroll = Vector2(14, 0)
+
+[node name="Cloud1" type="Sprite2D" parent="CloudsNear" index="0"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(784, 524)
+texture = ExtResource("16_cloud32")
+
+[node name="Cloud2" type="Sprite2D" parent="CloudsNear" index="1"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(1644, 255)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("17_cloud38")
+flip_h = true
+
+[node name="Cloud3" type="Sprite2D" parent="CloudsNear" index="2"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(2673, 590)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("15_cloud30")
+
+[node name="Cloud4" type="Sprite2D" parent="CloudsNear" index="3"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(3704, 383)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("16_cloud32")
+flip_h = true
+
+[node name="Cloud5" type="Sprite2D" parent="CloudsNear" index="4"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(5298, 422)
+texture = ExtResource("17_cloud38")
+
+[node name="Cloud6" type="Sprite2D" parent="CloudsNear" index="5"]
+self_modulate = Color(1, 1, 1, 0.75)
+position = Vector2(6351, 399)
+scale = Vector2(0.95, 0.95)
+texture = ExtResource("15_cloud30")
+flip_h = true
+
+[node name="RunnerPlayer" parent="." index="4" instance=ExtResource("2_player")]
+position = Vector2(80, 750)
+
+[node name="RunnerCamera" type="Camera2D" parent="." index="5"]
+position = Vector2(380, 700)
+script = ExtResource("6_camera")
+
+[node name="Ground1" parent="." index="6" instance=ExtResource("3_platform")]
+position = Vector2(299, 1258)
+
+[node name="Ground2" parent="." index="7" instance=ExtResource("3_platform")]
+position = Vector2(869, 1258)
+icon = ExtResource("5_836dv")
+
+[node name="Ground3" parent="." index="8" instance=ExtResource("3_platform")]
+position = Vector2(1409, 1258)
+icon = ExtResource("6_c1tix")
+
+[node name="Ground4" parent="." index="9" instance=ExtResource("3_platform")]
+position = Vector2(1949, 1258)
+
+[node name="Ground5" parent="." index="10" instance=ExtResource("3_platform")]
+position = Vector2(2719, 1258)
+
+[node name="Ground6" parent="." index="11" instance=ExtResource("3_platform")]
+position = Vector2(3259, 1258)
+icon = ExtResource("5_836dv")
+
+[node name="Ground7" parent="." index="12" instance=ExtResource("3_platform")]
+position = Vector2(3799, 1258)
+icon = ExtResource("6_c1tix")
+
+[node name="Ground8" parent="." index="13" instance=ExtResource("3_platform")]
+position = Vector2(4619, 1258)
+icon = ExtResource("9_7gy4l")
+
+[node name="Ground9" parent="." index="14" instance=ExtResource("3_platform")]
+position = Vector2(5159, 1258)
+icon = ExtResource("6_c1tix")
+
+[node name="Ground10" parent="." index="15" instance=ExtResource("3_platform")]
+position = Vector2(5699, 1258)
+icon = ExtResource("6_c1tix")
+
+[node name="Ground11" parent="." index="16" instance=ExtResource("3_platform")]
+position = Vector2(6599, 1258)
+
+[node name="Ground12" parent="." index="17" instance=ExtResource("3_platform")]
+position = Vector2(7139, 1258)
+icon = ExtResource("7_nodfw")
+
+[node name="Ground13" parent="." index="18" instance=ExtResource("3_platform")]
+position = Vector2(7679, 1258)
+
+[node name="FloatPlatform1" parent="." index="19" instance=ExtResource("10_spring")]
+position = Vector2(4215, 1243)
+icon = ExtResource("11_drums")
+
+[node name="FloatPlatform2" parent="." index="20" instance=ExtResource("10_spring")]
+position = Vector2(6162, 1237)
+icon = ExtResource("11_drums")
+
+[node name="Hazard1" parent="." index="21" instance=ExtResource("4_hazard")]
+position = Vector2(850, 958)
+
+[node name="Hazard2" parent="." index="22" instance=ExtResource("4_hazard")]
+position = Vector2(1724, 1213)
+
+[node name="Hazard4" parent="." index="23" instance=ExtResource("4_hazard")]
+position = Vector2(2839, 955)
+
+[node name="Hazard5" parent="." index="24" instance=ExtResource("4_hazard")]
+position = Vector2(3361, 658)
+
+[node name="Hazard7" parent="." index="25" instance=ExtResource("4_hazard")]
+position = Vector2(4831, 715)
+
+[node name="Hazard8" parent="." index="26" instance=ExtResource("4_hazard")]
+position = Vector2(5150, 958)
+
+[node name="Hazard9" parent="." index="27" instance=ExtResource("4_hazard")]
+position = Vector2(6372, 897)
+
+[node name="Hazard11" parent="." index="28" instance=ExtResource("4_hazard")]
+position = Vector2(7067, 955)
+
+[node name="Hazard12" parent="." index="29" instance=ExtResource("4_hazard")]
+position = Vector2(7342, 1292)
+
+[node name="Goal" parent="." index="30" instance=ExtResource("5_goal")]
+position = Vector2(7296, 696)

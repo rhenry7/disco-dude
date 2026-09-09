@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3]
+
+[ext_resource type="Script" path="res://scenes/player/runner_player.gd" id="1_runner"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-1 15.png" id="2_fm80t"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-6 5.png" id="3_ugbui"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-3 10.png" id="4_fcs02"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-4 9.png" id="5_myrg7"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-5 6.png" id="6_kvlxm"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-7 4.png" id="7_uf5tr"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-8 4.png" id="8_lgqa7"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-9 4.png" id="9_8ydkj"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-10 2.png" id="10_3j4b4"]
+[ext_resource type="Texture2D" path="res://DiscoDude/Untitled_Artwork-11 2.png" id="11_yj68g"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_runner"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fm80t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fcs02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_myrg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvlxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ugbui")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 6.3
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_uf5tr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_lgqa7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8ydkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3j4b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_yj68g")
+}],
+"loop": true,
+"name": &"run",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_runner"]
+size = Vector2(156, 171)
+
+[node name="RunnerPlayer" type="CharacterBody2D" groups=["player"]]
+script = ExtResource("1_runner")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(63.033966, 43.977356)
+scale = Vector2(1.093017, 1.093017)
+sprite_frames = SubResource("SpriteFrames_runner")
+animation = &"run"
+autoplay = "run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(56, 62)
+shape = SubResource("RectangleShape2D_runner")

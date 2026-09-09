@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://7bpo8abvpwwc"]
+
+[ext_resource type="Script" uid="uid://dmptwfahdq3ra" path="res://scenes/levels/start_screen.gd" id="1_50gxt"]
+[ext_resource type="Texture2D" uid="uid://bfo2n1tdxqs58" path="res://ChatGPT Image Jul 6, 2026, 10_58_43 AM.png" id="1_jevjd"]
+
+[node name="start_screen" type="Node2D"]
+script = ExtResource("1_50gxt")
+
+[node name="ChatGptImageJul6,2026,105843Am" type="Sprite2D" parent="."]
+position = Vector2(885.99994, 556)
+scale = Vector2(1.52, 1.52)
+texture = ExtResource("1_jevjd")
+
+[node name="Control" type="HBoxContainer" parent="."]
+offset_left = 352.0
+offset_top = 1118.0
+offset_right = 3140.0
+offset_bottom = 1292.0
+
+[node name="StartButton" type="Button" parent="Control"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "Disco Dude is too far from Disco Daisy.
+Help him find the love of his life! 
+Click to start."
+flat = true
+autowrap_trim_flags = 0

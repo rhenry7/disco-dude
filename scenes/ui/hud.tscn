@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://p3r1uyb0hyje"]
+[gd_scene load_steps=8 format=3 uid="uid://p3r1uyb0hyje"]
 
 [ext_resource type="Script" uid="uid://c5dqvp8vo1l2s" path="res://scenes/ui/hud.gd" id="1_hud"]
 [ext_resource type="Texture2D" uid="uid://cddwwpa4botif" path="res://UI_Icons/play.png" id="2_play"]
@@ -8,10 +8,6 @@
 atlas = ExtResource("2_play")
 region = Rect2(41, 114, 138, 165)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_next"]
-atlas = ExtResource("2_play")
-region = Rect2(1138, 114, 138, 165)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_pause_icon"]
 atlas = ExtResource("3_pause")
 region = Rect2(610, 111, 126, 178)
@@ -19,6 +15,10 @@ region = Rect2(610, 111, 126, 178)
 [sub_resource type="AtlasTexture" id="AtlasTexture_play_icon"]
 atlas = ExtResource("2_play")
 region = Rect2(610, 111, 126, 178)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_next"]
+atlas = ExtResource("2_play")
+region = Rect2(1138, 114, 138, 165)
 
 [node name="HUD" type="CanvasLayer"]
 process_mode = 3
@@ -45,12 +45,14 @@ theme_override_constants/separation = 12
 
 [node name="RestartButton" type="TextureButton" parent="Controls"]
 custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = SubResource("AtlasTexture_restart")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="PlayPauseButton" type="TextureButton" parent="Controls"]
 custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 toggle_mode = true
 texture_normal = SubResource("AtlasTexture_pause_icon")
 texture_pressed = SubResource("AtlasTexture_play_icon")
@@ -59,6 +61,7 @@ stretch_mode = 5
 
 [node name="NextButton" type="TextureButton" parent="Controls"]
 custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
 texture_normal = SubResource("AtlasTexture_next")
 ignore_texture_size = true
 stretch_mode = 5
