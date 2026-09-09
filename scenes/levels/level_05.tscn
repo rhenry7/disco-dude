@@ -133,11 +133,11 @@ position = Vector2(869, 1258)
 icon = ExtResource("5_836dv")
 
 [node name="Ground3" parent="." index="8" instance=ExtResource("3_platform")]
-position = Vector2(1409, 1258)
+position = Vector2(1390, 1258)
 icon = ExtResource("6_c1tix")
 
 [node name="Ground4" parent="." index="9" instance=ExtResource("3_platform")]
-position = Vector2(1949, 1258)
+position = Vector2(2017, 1258)
 
 [node name="Ground5" parent="." index="10" instance=ExtResource("3_platform")]
 position = Vector2(2719, 1258)
@@ -163,7 +163,7 @@ position = Vector2(5699, 1258)
 icon = ExtResource("6_c1tix")
 
 [node name="Ground11" parent="." index="16" instance=ExtResource("3_platform")]
-position = Vector2(6599, 1258)
+position = Vector2(6545, 1257)
 
 [node name="Ground12" parent="." index="17" instance=ExtResource("3_platform")]
 position = Vector2(7139, 1258)
@@ -181,28 +181,28 @@ position = Vector2(6162, 1237)
 icon = ExtResource("11_drums")
 
 [node name="Hazard1" parent="." index="21" instance=ExtResource("4_hazard")]
-position = Vector2(850, 958)
+position = Vector2(656, 962)
 
 [node name="Hazard2" parent="." index="22" instance=ExtResource("4_hazard")]
-position = Vector2(1724, 1213)
+position = Vector2(1702, 1191)
 
 [node name="Hazard4" parent="." index="23" instance=ExtResource("4_hazard")]
-position = Vector2(2839, 955)
+position = Vector2(2514, 996)
 
 [node name="Hazard5" parent="." index="24" instance=ExtResource("4_hazard")]
-position = Vector2(3361, 658)
+position = Vector2(3486, 1169)
 
 [node name="Hazard7" parent="." index="25" instance=ExtResource("4_hazard")]
-position = Vector2(4831, 715)
+position = Vector2(4562, 916)
 
 [node name="Hazard8" parent="." index="26" instance=ExtResource("4_hazard")]
-position = Vector2(5150, 958)
+position = Vector2(5207, 1214)
 
 [node name="Hazard9" parent="." index="27" instance=ExtResource("4_hazard")]
-position = Vector2(6372, 897)
+position = Vector2(6375, 963)
 
 [node name="Hazard11" parent="." index="28" instance=ExtResource("4_hazard")]
-position = Vector2(7067, 955)
+position = Vector2(6779, 1175)
 
 [node name="Hazard12" parent="." index="29" instance=ExtResource("4_hazard")]
 position = Vector2(7342, 1292)
